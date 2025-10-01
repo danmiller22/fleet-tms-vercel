@@ -12,7 +12,6 @@
   };
 
   const state = { table:"trucks", rows:[], filtered:[] };
-
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
   const setStatus = (t) => { const el=$("#status"); if(el) el.textContent = t; };

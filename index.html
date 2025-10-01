@@ -1,26 +1,25 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>US TEAM FLEET — TMS</title>
-<link rel="stylesheet" href="/ui.css">
-<!-- Keys + adapter MUST be before app.js -->
-<script defer src="/env.js"></script>
-<script defer src="/tms-adapter-supabase.js"></script>
-<script defer src="/app.js"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLEET TMS</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/env.js"></script>
+  <script defer src="/tms-adapter-supabase.js"></script>
+  <script defer src="/app.js"></script>
 </head>
 <body>
-  <header>
-    <div class="left">
+  <div class="header">
+    <div class="brand">
       <img src="/logo.png" alt="logo">
-      <h1>US TEAM FLEET <span class="badge">live sync</span></h1>
+      <div class="title">FLEET TMS <span class="badge">realtime</span></div>
     </div>
-    <div class="right">
+    <div class="actions">
       <a class="link" href="/archives.html">Archives</a>
     </div>
-  </header>
+  </div>
 
-  <div class="container">
+  <div class="wrap">
     <div class="tabs" id="tabs">
       <button class="tab active" data-table="trucks">Trucks</button>
       <button class="tab" data-table="trailers">Trailers</button>
@@ -31,7 +30,7 @@
 
     <div class="panel">
       <div class="controls">
-        <input class="input" id="search" placeholder="Search in current table (id, plate, number, text)">
+        <input class="input" id="search" placeholder="Search (id, plate, number, text)">
         <button class="btn" id="refresh">Refresh</button>
         <span class="status" id="status">ready</span>
       </div>
@@ -49,6 +48,8 @@
         <button class="btn primary" id="add">Add/Upsert</button>
       </div>
     </div>
+
+    <div class="footer">Cloudflare-like minimal UI · synced via Vercel/Supabase</div>
   </div>
 </body>
 </html>
