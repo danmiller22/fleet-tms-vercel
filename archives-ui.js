@@ -1,0 +1,1 @@
+(function(){if(document.getElementById('archives-btn'))return;var b=document.createElement('button');b.id='archives-btn';b.textContent='Archives';b.style='position:fixed;right:16px;bottom:16px';b.onclick=function(){location.href='/archives.html'};document.addEventListener('DOMContentLoaded',function(){document.body.appendChild(b)});})();
