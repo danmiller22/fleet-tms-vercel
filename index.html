@@ -1,1 +1,54 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fleet TMS</title><link rel="stylesheet" href="dark-fix.css"><script defer src="env.js"></script></head><body><h1 style="padding:16px">Fleet TMS</h1><button id="archives-btn">Archives</button><script src="tms-adapter-supabase.js"></script><script src="archives-ui.js"></script></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US TEAM FLEET — TMS</title>
+<link rel="stylesheet" href="/ui.css">
+<!-- Keys + adapter MUST be before app.js -->
+<script defer src="/env.js"></script>
+<script defer src="/tms-adapter-supabase.js"></script>
+<script defer src="/app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="left">
+      <img src="/logo.png" alt="logo">
+      <h1>US TEAM FLEET <span class="badge">live sync</span></h1>
+    </div>
+    <div class="right">
+      <a class="link" href="/archives.html">Archives</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-table="trucks">Trucks</button>
+      <button class="tab" data-table="trailers">Trailers</button>
+      <button class="tab" data-table="expenses">Expenses</button>
+      <button class="tab" data-table="repairs">Repairs</button>
+      <button class="tab" data-table="invoices">Invoices</button>
+    </div>
+
+    <div class="panel">
+      <div class="controls">
+        <input class="input" id="search" placeholder="Search in current table (id, plate, number, text)">
+        <button class="btn" id="refresh">Refresh</button>
+        <span class="status" id="status">ready</span>
+      </div>
+
+      <table class="table" id="grid">
+        <thead id="thead"></thead>
+        <tbody id="tbody"><tr><td>Loading…</td></tr></tbody>
+      </table>
+
+      <div class="controls" style="margin-top:12px">
+        <input class="input" id="f_id" placeholder="id / number / plate">
+        <input class="input" id="f_a" placeholder="field A">
+        <input class="input" id="f_b" placeholder="field B">
+        <input class="input" id="f_c" placeholder="field C">
+        <button class="btn primary" id="add">Add/Upsert</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
